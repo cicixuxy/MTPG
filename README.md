@@ -5,4 +5,4 @@
 * test.py for model testing.
 
 
-* If you want to test our AMHP model, you need to download BAID databases."# MTPG" 
+* If you want to test our MTPG-AIAA model, you need to download BAID databases."# MTPG" 
