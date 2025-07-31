@@ -1,6 +1,6 @@
 "# MTPG" 
 
-* Our model is implemented with Python 3.10.13.
+* Our model is implemented with Python 3.10
 
 * test.py for model testing.
 
