@@ -58,10 +58,6 @@ class AIAA(object):
             true_score = []
 
             pred_score = []
-            n=0
-            fps_all=0
-
-
             self.model.eval()
 
             with torch.no_grad():
