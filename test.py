@@ -92,8 +92,8 @@ class AIAA(object):
 
 if __name__ == "__main__":
     model = MTPG(input_dim=768)
-    BAID_train_csv = "/media/boot/BAID/dataset/train_comments.csv"
-    BAID_test_csv = "/media/boot/BAID//dataset/test_comments.csv"
+    BAID_train_csv = "/dataset/train_comments.csv"
+    BAID_test_csv = "/dataset/test_comments.csv"
     df_train = pd.read_csv(BAID_train_csv)
     df_test = pd.read_csv(BAID_test_csv)
 
