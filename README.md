@@ -2,11 +2,7 @@
 
 * Our model is implemented with Python 3.10
 
-* test.py for model testing.
-
-* The descriptions for training can be downloaded on:https://drive.usercontent.google.com/download?id=1AFZXxUGORsbePo5n06l_I0L5RcHwWcfI
-
-* The descriptions for testing can be downloaded on:https://drive.usercontent.google.com/download?id=1jgxjCo1yOQXuhhWmYyN_Gkh3_ajubsak
+* demo.py for predicting the scores of two images by using MTPG-AIAA model.
 
 * If you want to generate descriptions by yourself, you should download BAID database and use the domain-specific MLLM called GalleryGPT to generate.
   
