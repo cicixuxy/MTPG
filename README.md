@@ -2,7 +2,7 @@
 
 * Our model is implemented with Python 3.10
 
-* demo.py for predicting the scores of two images by using MTPG-AIAA model.
+* demo.py for predicting the scores of two artistic images by using MTPG-AIAA model.
 
 * If you want to generate descriptions by yourself, you should download BAID database and use the domain-specific MLLM called GalleryGPT to generate.
   
