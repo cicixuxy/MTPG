@@ -8,8 +8,7 @@ logger = logging.getLogger(__name__)
 def pil_transform(if_train):
     IMAGE_NET_MEAN = [0.485, 0.456, 0.406] 
     IMAGE_NET_STD = [0.229, 0.224, 0.225] 
-
-    # 归一化
+    
     normalize = transforms.Normalize(
         mean=IMAGE_NET_MEAN,
         std=IMAGE_NET_STD)
@@ -51,7 +50,6 @@ class PilCloudLoader(object):
         self.size = size
 
     def __call__(self, path, if_train):
-        # transform模块
         transform = pil_transform(if_train=if_train)
 
         if if_train:
@@ -89,7 +87,6 @@ class PilCloudLoader_pre(object):
         self.size = size
 
     def __call__(self, path, if_train):
-        # transform模块
         transform = pil_transform_pre(if_train=if_train)
 
         if if_train:
