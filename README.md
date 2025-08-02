@@ -8,7 +8,10 @@
 
 * The test dataset with art-level desccriptions can be downloaded on: https://drive.usercontent.google.com/download?id=1jgxjCo1yOQXuhhWmYyN_Gkh3_ajubsak
 
+* The longclip parameters can be downloaded on: https://drive.usercontent.google.com/download?id=1bDKBAqCnvMeEXKecMBB6UCgxj8aglPPq
+
 * If you want to generate descriptions by yourself, you should download BAID database and use the domain-specific MLLM called GalleryGPT to generate.
   
 * The checkpoint can be downloaded on: https://drive.usercontent.google.com/download?id=19uSUuZ_5jCfgKzLBqAERUgmAv9Yd8Oci
+
 
