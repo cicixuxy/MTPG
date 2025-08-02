@@ -1,7 +1,7 @@
 import torch
 from itertools import product
 from longclip import longclip
-from MTPG import MTPG
+from model import MTPG
 from img_loader import PilCloudLoader,PilCloudLoader_pre
 
 levels = ['bad', 'poor', 'fair', 'good', 'perfect']
