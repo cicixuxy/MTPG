@@ -19,7 +19,7 @@ if __name__ == "__main__":
     model.load_state_dict(torch.load('checkpoints/model_save.pt'))
     model.eval()
     img_loader = PilCloudLoader(handle_exceptions=False, size=(224,224), aug_num=1)
-    image_path = 'images/Img1.jpg'
+    image_path = 'images/20698.jpg'
     input1 = img_loader(image_path,if_train=False).unsqueeze(0).to(device)
     description1=[(f"The painting is executed in a vibrant and expressive style, characterized by bold, thick brushstrokes that create a sense of movement and energy. "
                   f"The composition is dominated by a central figure, a police dog, rendered in a dynamic pose with its head held high and its body lunging forward. "
@@ -34,7 +34,7 @@ if __name__ == "__main__":
                                                                                             :,
                                                                                             4]
     print("The score of Img1 is: %.2f" % pred1.item())
-    image_path = 'images/Img2.jpg'
+    image_path = 'images/196817.jpg'
     input2 = img_loader(image_path, if_train=False).unsqueeze(0).to(device)
     description2 = [(f"The painting exhibits a highly realistic and detailed style, capturing every nuance of the subject's features. "
                      f"The artist employs a combination of soft, blended brushstrokes and sharp, precise lines to create a sense of depth and texture. "
