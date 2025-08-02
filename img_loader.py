@@ -3,11 +3,11 @@ import logging
 from PIL import Image
 from torchvision import transforms
 
-logger = logging.getLogger(__name__)  # 创建一个与当前模块相关联的日志记录器对象
+logger = logging.getLogger(__name__)  
 
 def pil_transform(if_train):
-    IMAGE_NET_MEAN = [0.485, 0.456, 0.406]  # RGB 均值
-    IMAGE_NET_STD = [0.229, 0.224, 0.225]  # RGB 标准差
+    IMAGE_NET_MEAN = [0.485, 0.456, 0.406] 
+    IMAGE_NET_STD = [0.229, 0.224, 0.225] 
 
     # 归一化
     normalize = transforms.Normalize(
@@ -17,8 +17,8 @@ def pil_transform(if_train):
     if if_train:
         transform = transforms.Compose([
             transforms.Resize((256, 256)),
-            transforms.RandomHorizontalFlip(),  # 随机水平翻转，数据增强
-            transforms.RandomCrop((224, 224)),  # 随机裁剪，数据增强
+            transforms.RandomHorizontalFlip(),  
+            transforms.RandomCrop((224, 224)), 
             transforms.ToTensor(),
             normalize])
     else:
@@ -29,10 +29,9 @@ def pil_transform(if_train):
     return transform
 
 def pil_transform_pre(if_train):
-    IMAGE_NET_MEAN = [0.485, 0.456, 0.406]  # RGB 均值
-    IMAGE_NET_STD = [0.229, 0.224, 0.225]  # RGB 标准差
+    IMAGE_NET_MEAN = [0.485, 0.456, 0.406]  
+    IMAGE_NET_STD = [0.229, 0.224, 0.225]
 
-    # 归一化
     normalize = transforms.Normalize(
         mean=IMAGE_NET_MEAN,
         std=IMAGE_NET_STD)
@@ -47,7 +46,7 @@ def pil_transform_pre(if_train):
     return transform
 class PilCloudLoader(object):
     def __init__(self, handle_exceptions=False, size=(224, 224), aug_num=1):
-        self.handle_exceptions = handle_exceptions  # 控制在数据转换过程中是否处理异常
+        self.handle_exceptions = handle_exceptions  
         self.aug_num = aug_num
         self.size = size
 
@@ -67,8 +66,8 @@ class PilCloudLoader(object):
                     else:
                         raise e
 
-                img = transform(img)  # 将图像输入到transform模块
-                imgs.append(img)  # 将预处理后的img添加到imgs列表中
+                img = transform(img) 
+                imgs.append(img)  
             return imgs
         else:
             try:
@@ -85,7 +84,7 @@ class PilCloudLoader(object):
 
 class PilCloudLoader_pre(object):
     def __init__(self, handle_exceptions=False, size=(224, 224),aug_num=1):
-        self.handle_exceptions = handle_exceptions  # 控制在数据转换过程中是否处理异常
+        self.handle_exceptions = handle_exceptions  
         self.aug_num = aug_num
         self.size = size
 
@@ -105,8 +104,8 @@ class PilCloudLoader_pre(object):
                     else:
                         raise e
 
-                img = transform(img)  # 将图像输入到transform模块
-                imgs.append(img)  # 将预处理后的img添加到imgs列表中
+                img = transform(img)
+                imgs.append(img)
             return imgs
         else:
             try:
