@@ -1,24 +1,7 @@
-import torch.nn as nn
-import torchvision.models as models
-import pdb
 import torch
-import logging
-import clip
-import torch.nn.functional as F
-import torch.optim as optim
-import time
-from tqdm import tqdm
-import os
-import numpy as np
-import argparse
 import pandas as pd
-import random
-import copy
-
 from torch.utils.data import DataLoader
 from itertools import product
-
-
 from dataset import BAIDDatasetDF
 from longclip import longclip
 from MTPG import MTPG
