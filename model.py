@@ -13,7 +13,7 @@ class BAID_SP(nn.Module):
 
     def __init__(self):
         super().__init__()
-        self.model, _ = longclip.load("./checkpoints/longclip-L.pt", device=device)
+        self.model, _ = longclip.load("checkpoints/longclip-L.pt", device=device)
         self.logit_scale = nn.Parameter(torch.ones([]) * np.log(1 / 0.07))
 
     def forward(self, x, aes_prompt):
