@@ -22,8 +22,7 @@ from itertools import product
 from dataset import BAIDDatasetDF
 from longclip import longclip
 from MTPG import MTPG
-
-from utils.utils import AverageMeter, compute_val_metrics, emd_loss, convert_models_to_fp32, compute_att_metrics
+from utils import compute_val_metrics
 
 
 levels = ['bad', 'poor', 'fair', 'good', 'perfect']
