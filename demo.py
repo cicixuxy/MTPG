@@ -16,7 +16,7 @@ aes_prompt = torch.cat(
 if __name__ == "__main__":
     model = MTPG(input_dim=768)
     model=model.to(device)
-    model.load_state_dict(torch.load('checkpoints/model_best.pt'))
+    model.load_state_dict(torch.load('checkpoints/model_save.pt'))
     model.eval()
     img_loader = PilCloudLoader(handle_exceptions=False, size=(224,224), aug_num=1)
     image_path = 'images/Img1.jpg'
