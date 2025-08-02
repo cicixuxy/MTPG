@@ -4,7 +4,7 @@ from torch.utils.data import DataLoader
 from itertools import product
 from dataset import BAIDDatasetDF
 from longclip import longclip
-from MTPG import MTPG
+from model import MTPG
 from utils import compute_val_metrics
 
 
