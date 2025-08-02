@@ -9,30 +9,6 @@ from longclip import longclip
 
 device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
 
-class BAID_SP(nn.Module):
-
-    def __init__(self):
-        super().__init__()
-        self.model, _ = longclip.load("checkpoints/longclip-L.pt", device=device)
-        self.logit_scale = nn.Parameter(torch.ones([]) * np.log(1 / 0.07))
-
-    def forward(self, x, aes_prompt):
-
-        image_feature = self.model.encode_image(x)
-        aes_prompt_feature = self.model.encode_text(aes_prompt)
-
-        image_feature = image_feature / image_feature.norm(dim=1, keepdim=True)
-        image_feature = image_feature.float()
-        aes_prompt_feature = aes_prompt_feature / aes_prompt_feature.norm(dim=1, keepdim=True)
-        aes_prompt_feature = aes_prompt_feature.float()
-
-        logit_scale = self.logit_scale.exp()
-        logits_per_image = logit_scale * image_feature @ aes_prompt_feature.t()
-
-        logits_per_image = F.softmax(logits_per_image, dim=1)
-
-        return logits_per_image
-
 class MTPG(nn.Module):
 
     def __init__(self, input_dim):
