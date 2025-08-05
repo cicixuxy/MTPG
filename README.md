@@ -31,17 +31,13 @@ The final file path should match the following structure:
 ┬─ checkpoint
 │   └─ model_save.pth
 ├─ longclip
-│   ├─ ViT-L-14-336px.pt
+│   ├─ longclip-L.pt
 │   └─ ... (Pretrained long_clip models)
 └─ data
-    ├─ train
-    │   ├─ 01-Experts-A
-    │   │   ├─ a0001.jpg
-    │   │   └─ ... (id.jpg)
-    │   └─ ... (style folder)
-    │   └─ ... (style folder)
-    └─ test
-        └─ ... (style folder)
+    ├─ images 
+    │   └─ ... 
+    │   └─ ... (image_name.jpg)
+    └─ test_description.csv
 ```
 #### Test
 For predicting the scores of two artistic images by using MTPG-AIAA model:
@@ -52,6 +48,7 @@ for model testing.
 ```sh
 python test.py
 ```
+
 
 
 
