@@ -36,10 +36,13 @@ The final file path should match the following structure:
 │   ├─ longclip-L.pt
 │   └─ ... (Pretrained long_clip models)
 └─ data
-    ├─ images 
-    │   └─ ... 
-    │   └─ ... (image_name.jpg)
-    └─ test_description.csv
+│   ├─ images 
+│   │   └─ ... 
+│   │   └─ ... (image_name.jpg)
+│   └─ test_description.csv
+└─ example_images
+    ├─ 20698.jpg
+    └─ 196817.jpg
 ```
 #### Test
 For predicting the scores of two artistic images by using MTPG-AIAA model:
@@ -50,6 +53,7 @@ For model testing:
 ```sh
 python test.py
 ```
+
 
 
 
