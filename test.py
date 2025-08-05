@@ -66,7 +66,7 @@ class AIAA(object):
 if __name__ == "__main__":
     model = MTPG(input_dim=768)
 
-    BAID_test_csv = "dataset/test_descriptions.csv"
+    BAID_test_csv = "data/test_descriptions.csv"
 
     df_test = pd.read_csv(BAID_test_csv)
 
