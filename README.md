@@ -7,7 +7,7 @@ Artistic Image Aesthetics Assessment (AIAA) aims to emulate human artistic perce
 ### Dataset
 The test dataset with art-level desccriptions can be downloaded on: [test dataset]( https://drive.usercontent.google.com/download?id=1jgxjCo1yOQXuhhWmYyN_Gkh3_ajubsak)
 
-If you want to generate descriptions by yourself, you should download BAID database [Link](https://github.com/Dreemurr-T/BAID)  and use the domain-specific MLLM called GalleryGPT to generate.
+If you want to generate descriptions by yourself, you should download BAID database [Link](https://github.com/Dreemurr-T/BAID)  and use the domain-specific MLLM called GalleryGPT [Link](https://github.com/steven640pixel/GalleryGPT) to generate.
 
 ### Code
 #### Requirements
@@ -53,6 +53,7 @@ For model testing:
 ```sh
 python test.py
 ```
+
 
 
 
