@@ -44,14 +44,15 @@ The final file path should match the following structure:
         └─ ... (style folder)
 ```
 #### Test
-*For predicting the scores of two artistic images by using MTPG-AIAA model:
+For predicting the scores of two artistic images by using MTPG-AIAA model:
 ```sh
 python demo.py
 ```
-*for model testing.
+for model testing.
 ```sh
 python test.py
 ```
+
 
 
 
