@@ -44,10 +44,11 @@ For predicting the scores of two artistic images by using MTPG-AIAA model:
 ```sh
 python demo.py
 ```
-for model testing.
+For model testing.
 ```sh
 python test.py
 ```
+
 
 
 
