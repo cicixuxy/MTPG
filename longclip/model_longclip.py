@@ -362,9 +362,6 @@ class CLIP(nn.Module):
         x = self.transformer(x)
         x = x.permute(1, 0, 2)  # LND -> NLD
         x = self.ln_final(x).type(self.dtype)
-
-        # x.shape = [batch_size, n_ctx, transformer.width]
-        # take features from the eot embedding (eot_token is the highest number in each sequence)
         x = x[torch.arange(x.shape[0]), text.argmax(dim=-1)] @ self.text_projection
 
         return x
@@ -387,58 +384,22 @@ class CLIP(nn.Module):
     
     #rewrite PCA to avoid inf
     def PCA(self, input_tensor, PCA_dim):
-        # 计算均值
         mean = torch.mean(input_tensor, dim=0)
-        # 去均值
+
         X_centered = input_tensor - mean.unsqueeze(0)
         X_centered = X_centered.float()
 
-        # 使用SVD而不是eig来计算主成分
+
         U, S, Vt = torch.linalg.svd(X_centered, full_matrices=False)
         principal_components = Vt.T[:, :PCA_dim]
         
-        # 转换到新的维度
+
         X_transformed = torch.mm(X_centered, principal_components)
-        # 恢复到原始空间
         X_reversed = torch.mm(X_transformed, principal_components.T)
         X_reversed += mean
 
         return X_reversed
     
-    # def PCA(self, input_tensor, PCA_dim):
-    #     mean = torch.mean(input_tensor, dim=0)
-    #     X_centered = input_tensor - mean.unsqueeze(0)
-    #     X_centered = X_centered.float()
-    #     cov_matrix = torch.mm(X_centered.T, X_centered)
-    #     eigenvalues, eigenvectors = torch.linalg.eig(cov_matrix)
-    #     eigenvalues = eigenvalues.float()
-    #     eigenvectors = eigenvectors.float()    
-    #     sorted_indices = torch.argsort(eigenvalues, descending=True)
-    #     eigenvectors = eigenvectors[:, sorted_indices]
-    #     principal_components = eigenvectors[:, :PCA_dim]
-    #     X_transformed = torch.mm(X_centered, principal_components)
-    #     X_reversed = torch.mm(X_transformed, principal_components.T)
-    #     X_reversed += mean
-    #     return X_reversed
-
-
-    # def forward(self, image, text):
-    #     image_features = self.encode_image(image)
-    #     text_features = self.encode_text(text)
-
-    #     # normalized features
-    #     image_features = image_features / image_features.norm(dim=1, keepdim=True)
-    #     text_features = text_features / text_features.norm(dim=1, keepdim=True)
-
-    #     # cosine similarity as logits
-    #     logit_scale = self.logit_scale.exp()
-    #     logits_per_image = logit_scale * image_features @ text_features.t()
-    #     logits_per_text = logits_per_image.t()
-
-    #     # shape = [global_batch_size, global_batch_size]
-    #     return logits_per_image, logits_per_text
-
-    #rewrite forward, fix the bug of no gradient in the original concat_all_gather. Notice that torch.distributed.nn.all_gather has backward function
     def forward(self, image, text_long,text_short,rank):
         image_features_long = self.encode_image(image)
         text_features_long = self.encode_text(text_long)
