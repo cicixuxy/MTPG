@@ -14,7 +14,7 @@ class MTPG(nn.Module):
     def __init__(self, input_dim):
         super().__init__()
         self.maf_num=1
-        self.model, _ = longclip.load("checkpoints/longclip-L.pt", device=device)
+        self.model, _ = longclip.load("longclip/longclip-L.pt", device=device)
         self.logit_scale = nn.Parameter(torch.ones([]) * np.log(1 / 0.07))
 
         self.half_input_dim = int(input_dim / 2)
