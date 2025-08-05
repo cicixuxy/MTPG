@@ -40,7 +40,7 @@ The final file path should match the following structure:
 │   │   └─ ... 
 │   │   └─ ... (image_name.jpg)
 │   └─ test_description.csv
-└─ example_images
+└─ images
     ├─ 20698.jpg
     └─ 196817.jpg
 ```
@@ -53,6 +53,7 @@ For model testing:
 ```sh
 python test.py
 ```
+
 
 
 
