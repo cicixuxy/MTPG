@@ -60,7 +60,7 @@ class AIAA(object):
             return plcc, srcc, acc
     def _init_weights(self):
 
-        self.model.load_state_dict(torch.load('checkpoints/model_save.pt'),
+        self.model.load_state_dict(torch.load('checkpoint/model_save.pt'),
                                    strict=False)
 
 if __name__ == "__main__":
