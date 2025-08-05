@@ -34,7 +34,7 @@ The final file path should match the following structure:
 │   └─ model_save.pth
 ├─ longclip
 │   ├─ longclip-L.pt
-│   └─ ... (Pretrained long_clip models)
+│   └─ ... (Pretrained Long-CLIP models)
 └─ data
 │   ├─ images 
 │   │   └─ ... 
@@ -53,6 +53,7 @@ For model testing:
 ```sh
 python test.py
 ```
+
 
 
 
