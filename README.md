@@ -22,7 +22,9 @@ Install the necessary dependencies using:
 pip install -r requirements.txt
 ```
 #### Download
-The longclip parameters can be downloaded on: [longclip](https://drive.usercontent.google.com/download?id=1bDKBAqCnvMeEXKecMBB6UCgxj8aglPPq)
+The Long-CLIP parameters can be downloaded on: [longclip-L](https://drive.usercontent.google.com/download?id=1bDKBAqCnvMeEXKecMBB6UCgxj8aglPPq)
+
+The Long-CLIP pretrained models can be found here:[longclip](https://github.com/beichenzbc/Long-CLIP/tree/main/model)
 
 The checkpoint can be downloaded on:[checkpoint]( https://drive.usercontent.google.com/download?id=19uSUuZ_5jCfgKzLBqAERUgmAv9Yd8Oci)
 
@@ -48,6 +50,7 @@ For model testing:
 ```sh
 python test.py
 ```
+
 
 
 
