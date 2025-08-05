@@ -5,7 +5,7 @@ Artistic Image Aesthetics Assessment (AIAA) aims to emulate human artistic perce
 
 ## Getting started
 ### Dataset
-The test dataset with art-level desccriptions can be downloaded on:[test dataset]( https://drive.usercontent.google.com/download?id=1jgxjCo1yOQXuhhWmYyN_Gkh3_ajubsak)
+The test dataset with art-level desccriptions can be downloaded on: [test dataset]( https://drive.usercontent.google.com/download?id=1jgxjCo1yOQXuhhWmYyN_Gkh3_ajubsak)
 
 If you want to generate descriptions by yourself, you should download BAID database [Link](https://github.com/Dreemurr-T/BAID)  and use the domain-specific MLLM called GalleryGPT to generate.
 
@@ -21,17 +21,39 @@ Install the necessary dependencies using:
 ```sh
 pip install -r requirements.txt
 ```
+#### Download
+The longclip parameters can be downloaded on: [longclip](https://drive.usercontent.google.com/download?id=1bDKBAqCnvMeEXKecMBB6UCgxj8aglPPq)
 
-* demo.py for predicting the scores of two artistic images by using MTPG-AIAA model.
+The checkpoint can be downloaded on:[checkpoint]( https://drive.usercontent.google.com/download?id=19uSUuZ_5jCfgKzLBqAERUgmAv9Yd8Oci)
 
-* test.py for model testing.
+The final file path should match the following structure:
+```
+┬─ checkpoint
+│   └─ model_save.pth
+├─ longclip
+│   ├─ ViT-L-14-336px.pt
+│   └─ ... (Pretrained long_clip models)
+└─ data
+    ├─ train
+    │   ├─ 01-Experts-A
+    │   │   ├─ a0001.jpg
+    │   │   └─ ... (id.jpg)
+    │   └─ ... (style folder)
+    │   └─ ... (style folder)
+    └─ test
+        └─ ... (style folder)
 
-* The test dataset with art-level desccriptions can be downloaded on:[test dataset]( https://drive.usercontent.google.com/download?id=1jgxjCo1yOQXuhhWmYyN_Gkh3_ajubsak)
+#### Test
+*For predicting the scores of two artistic images by using MTPG-AIAA model:
+```sh
+python demo.py
+```
+*for model testing.
+```sh
+python test.py
+```
 
-* The longclip parameters can be downloaded on: [longclip](https://drive.usercontent.google.com/download?id=1bDKBAqCnvMeEXKecMBB6UCgxj8aglPPq)
 
-  
-* The checkpoint can be downloaded on:[checkpoint]( https://drive.usercontent.google.com/download?id=19uSUuZ_5jCfgKzLBqAERUgmAv9Yd8Oci)
 
 
 
