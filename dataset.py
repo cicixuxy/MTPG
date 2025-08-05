@@ -31,7 +31,7 @@ class BAIDDatasetDF(Dataset):
     def __getitem__(self, item):
 
         row = self.df.iloc[item]    
-        image_path = os.path.join('/media/boot/BAID/images', os.path.join(row["image"]))
+        image_path = os.path.join('data/images', os.path.join(row["image"]))
 
         inputs = self.img_loader(image_path, self.if_train)
 
