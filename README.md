@@ -42,7 +42,7 @@ The final file path should match the following structure:
     │   └─ ... (style folder)
     └─ test
         └─ ... (style folder)
-
+```
 #### Test
 *For predicting the scores of two artistic images by using MTPG-AIAA model:
 ```sh
@@ -52,6 +52,7 @@ python demo.py
 ```sh
 python test.py
 ```
+
 
 
 
